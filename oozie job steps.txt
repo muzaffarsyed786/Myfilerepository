@@ -1,0 +1,17 @@
+Oozie Job scheduling:
+
+create hql script
+create workflow.xml
+hive-site.xml
+
+
+copy above files to hdfs path(/user/oozie/workflows)
+
+mkdir /tmp/ooziesharelib
+cd /tmp/ooziesharelib/
+tar -xzf /usr/lib/oozie/oozie-sharelib-4.0.0.tar.gz
+sudo -u oozie hadoop fs -put share /user/oozie/
+
+create job.properties files
+
+oozie job -oozie http://localhost:11000/oozie -config job.properties -run
